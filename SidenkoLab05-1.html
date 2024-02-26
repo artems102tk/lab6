@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<HTML>
+    <HEAD>
+        <meta charset=UTF-8>
+        <TITLE>Розклад занять групи</TITLE>
+        <STYLE>
+            body {
+                BGCOLOR: #000000; /* Чорний фон сторінки */
+                COLOR: #FFFFFF; /* Білий текст */
+                FONT-FAMILY: Arial, sans-serif;
+            }
+
+            table {
+                WIDTH: 100%;
+                BORDER-COLLAPSE: COLLAPSE;
+                BACKGROUND-COLOR: #000000; /* Чорний фон для таблиці */
+                TEXT-ALIGN: LEFT; /* Вирівнювання тексту по лівому краю */
+            }
+
+            table, th, td {
+                BORDER: 20PX SOLID #FFFFFF; /* Білі рамки для таблиці */
+                TEXT-ALIGN: CENTER; /* Вирівнювання тексту по центру */
+            }
+
+            th, td {
+                PADDING: 10PX; /* Відступ в середині комірки */
+                VERTICAL-ALIGN: TOP; /* Вирівнювання тексту по верхньому краю комірки */
+            }
+
+            .subject-list {
+                MARGIN-BOTTOM: 500PX; /* Відступ між рядками в переліку предметів */
+            }
+
+            .day-link {
+                FONT-SIZE: 40PX; /* Розмір тексту для гіперпосилань */
+            }
+
+            #schedule-table {
+                MARGIN-BOTTOM: 20PX; /* Отступ снизу для таблиці розкладу занять */
+            }
+
+            /* Стилі для кнопки "наверх" */
+            #scroll-to-top {
+                POSITION: FIXED;
+                BOTTOM: 20PX;
+                RIGHT: 20PX;
+                BACKGROUND-COLOR: #FFFFFF;
+                BORDER: NONE;
+                COLOR: BLACk;
+                PADDING: 10PX 20PX;
+                TEXT-ALIGN: CENTER;
+                TEXT-DECORATION: NONE;
+                FONT-SIZE: 16PX;
+                CURSOR: POINTER;
+            }
+
+            /* Стилі для заголовка "Розклад занять" */
+            #schedule-heading {
+                TEXT-ALIGN: CENTER;
+                FONT-SIZE: 50PX;
+                MARGIN-TOP: 20PX;
+                MARGIN-BOTTOM: 20PX;
+                BORDER: 10PX SOLID #000000; /* Чорна рамка */
+                PADDING: 10PX;
+                COLOR: #000000; /* Чорний колір тексту */
+            }
+
+            /* Медіа-запит для адаптації під різні пристрої */
+            @media screen and (max-width: 600px) {
+                .day-link {
+                    FONT-SIZE: 20PX;
+                }
+
+                .subject-list {
+                    FONT-SIZE: 40PX;
+                }
+
+                #scroll-to-top {
+                    PADDING: 5PX 10PX;
+                    FONT-SIZE: 12PX;
+                }
+
+                #schedule-heading {
+                    FONT-SIZE: 20PX;
+                }
+            }
+        </STYLE>
+    </HEAD>
+    <BODY>
+        <FONT COLOR="WHITE" SIZE="7"> 
+            <!-- Заголовок "Розклад занять" -->
+            <DIV ID="schedule-heading">Розклад занять</DIV>
+
+            <TABLE>
+                <TR>
+                    <TD><A HREF="#ПН" CLASS="day-link">Понеділок</A></TD>
+                    <TD><A HREF="#ВТ" CLASS="day-link">Вівторок</A></TD>
+                    <TD><A HREF="#СР" CLASS="day-link">Середа</A></TD>
+                    <TD><A HREF="#ЧТ" CLASS="day-link">Четвер</A></TD>
+                    <TD><A HREF="#ПТ" CLASS="day-link">П’ятниця</A></TD>
+                    <TD><A HREF="#СБ" CLASS="day-link">Субота</A></TD>
+                </TR>
+            </TABLE>
+
+            <!-- Розклад занять -->
+            <TABLE ID="schedule-table">
+                <!-- Понеділок -->
+                <TR>
+                    <TD>
+                        <A NAME="ПН"></A>
+                        <B>Понеділок:</B>
+                        <DIV CLASS="subject-list" STYLE="FONT-SIZE: 80PX;"> <!-- Розмір тексту для переліку предметів -->
+                            Математика<BR>
+                            Фізика<BR>
+                            Англійська<BR>
+                            Історія<BR>
+                            Програмування
+                        </DIV>
+                    </TD>
+                </TR>
+                <!-- Вівторок -->
+                <TR>
+                    <TD>
+                        <A NAME="ВТ"></A>
+                        <B>Вівторок:</B>
+                        <DIV CLASS="subject-list" STYLE="FONT-SIZE: 80PX;"> <!-- Розмір тексту для переліку предметів -->
+                            Фізкультура<BR>
+                            Хімія<BR>
+                            Географія<BR>
+                            Література<BR>
+                            Музика
+                        </DIV>
+                    </TD>
+                </TR>
+                <!-- Середа -->
+                <TR>
+                    <TD>
+                        <A NAME="СР"></A>
+                        <B>Середа:</B>
+                        <DIV CLASS="subject-list" STYLE="FONT-SIZE: 80PX;"> <!-- Розмір тексту для переліку предметів -->
+                            Інформатика<BR>
+                            Астрономія<BR>
+                            Французька<BR>
+                            Біологія<BR>
+                            Технічна графіка
+                        </DIV>
+                    </TD>
+                </TR>
+                <!-- Четвер -->
+                <TR>
+                    <TD>
+                        <A NAME="ЧТ"></A>
+                        <B>Четвер:</B>
+                        <DIV CLASS="subject-list" STYLE="FONT-SIZE: 80PX;"> <!-- Розмір тексту для переліку предметів -->
+                            Іспанська<BR>
+                            Інженерія<BR>
+                            Економіка<BR>
+                            Спорт<BR>
+                            Художня культура
+                        </DIV>
+                    </TD>
+                </TR>
+                <!-- П'ятниця -->
+                <TR>
+                    <TD>
+                        <A NAME="ПТ"></A>
+                        <B>П'ятниця:</B>
+                        <DIV CLASS="subject-list" STYLE="FONT-SIZE: 80PX;"> <!-- Розмір тексту для переліку предметів -->
+                            Інформаційні технології<BR>
+                            Фізична культура<BR>
+                            Мовознавство<BR>
+                            Правознавство<BR>
+                            Геометрія
+                        </DIV>
+                    </TD>
+                </TR>
+                <!-- Субота -->
+                <TR>
+                    <TD>
+                        <A NAME="СБ"></A>
+                        <B>Субота:</B>
+                        <DIV CLASS="subject-list" STYLE="FONT-SIZE: 80PX;"> <!-- Розмір тексту для переліку предметів -->
+                            Історія мистецтв<BR>
+                            Етика<BR>
+                            Інженерна графіка<BR>
+                            Трудове навчання<BR>
+                            Креслення
+                        </DIV>
+                    </TD>
+                </TR>
+            </TABLE>
+
+            <!-- Кнопка "наверх" -->
+            <BUTTON ID="scroll-to-top" ONCLICK="scrollToTop()">На початок</BUTTON>
+
+            <SCRIPT>
+                // JavaScript функція для прокрутки наверх
+                function scrollToTop() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            </SCRIPT>
+        </FONT>
+    </BODY>
+</HTML>

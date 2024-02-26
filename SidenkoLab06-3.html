@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Полтавщина</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        img:hover {
+            opacity: 0.8;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            max-width: 600px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Ласкаво просимо на Полтавщину</h1>
+</header>
+
+<section>
+    <img src="photo1.jpg" alt="Фото 1" title="Гарний краєвид на Полтавщині" onclick="showPopup('Гарний краєвид на Полтавщині')">
+    <img src="photo2.jpg" alt="Фото 2" title="Архітектурні пам'ятки регіону" onclick="showPopup('Архітектурні пам\'ятки регіону')">
+    <img src="photo3.jpg" alt="Фото 3" title="Природа Полтавщини" onclick="showPopup('Природа Полтавщини')">
+
+    <div class="popup" onclick="closePopup()">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <p id="popup-text"></p>
+        </div>
+    </div>
+</section>
+
+<script>
+    function showPopup(text) {
+        document.getElementById('popup-text').innerText = text;
+        document.querySelector('.popup').style.display = 'flex';
+    }
+
+    function closePopup() {
+        document.querySelector('.popup').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>

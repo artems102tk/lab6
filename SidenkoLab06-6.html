@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Друзі</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #container {
+            position: relative;
+            text-align: center;
+        }
+        #infoWindow {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            box-sizing: border-box;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Застосовуємо її до малюнку -->
+<div id="container">
+    <map name="friendsMap">
+        <!-- Область для друга 1 -->
+        <area shape="poly" coords="0,0, 0,600, 200,600, 200,0" href="#" alt="Друг 1" title="Ім'я друг 1 <br> Інформація 1 <br> Додаткова інформація 1 ">
+
+        <!-- Область для друга 2 -->
+        <area shape="poly" coords="200,0, 200,600, 400,600, 400,0" href="#" alt="Друг 2" title="Ім'я друг 2 <br> Інформація 2 <br> Додаткова інформація 2 ">
+
+        <!-- Область для друга 3 -->
+        <area shape="poly" coords="400,0, 400,600, 600,600, 600,0" href="#" alt="Друг 3" title="Ім'я друг 3 <br> Інформація 3 <br> Додаткова інформація 3 ">
+    </map>
+
+    <img src="friend.png" width="600" height="600" border="1" usemap="#friendsMap" alt="Фото друзів">
+
+    <div id="infoWindow"></div>
+</div>
+
+<script>
+    const areas = document.querySelectorAll('area');
+    const infoWindow = document.getElementById('infoWindow');
+
+    areas.forEach(area => {
+        area.addEventListener('mouseover', function() {
+            const title = this.getAttribute('title');
+            infoWindow.innerHTML = title;
+            infoWindow.style.display = 'block';
+        });
+
+        area.addEventListener('mouseout', function() {
+            infoWindow.style.display = 'none';
+        });
+    });
+</script>
+
+</body>
+</html>

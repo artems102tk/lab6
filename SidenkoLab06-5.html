@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сенсорне Зображення</title>
+    <style>
+        #map {
+            position: relative;
+        }
+
+        .area {
+            position: absolute;
+            cursor: pointer;
+        }
+
+        .tooltip {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div id="map">
+    <img src="5.jpg" alt="Сенсорна карта" width="1000" height="500">
+
+    <!-- Область 1 -->
+    <div class="area" style="top: 200px; left: 250px; width: 100px; height: 50px;"
+         onmouseover="showTooltip('Підказка для області 1')"
+         onmouseout="hideTooltip()">1</div>
+
+    <!-- Область 2 -->
+    <div class="area" style="top: 200px; left: 500px; width: 80px; height: 80px;"
+         onmouseover="showTooltip('Підказка для області 2')"
+         onmouseout="hideTooltip()">2</div>
+
+    <!-- Підказка -->
+    <div id="tooltip" class="tooltip"></div>
+</div>
+
+<script>
+    function showTooltip(text) {
+        document.getElementById('tooltip').innerHTML = text;
+        document.getElementById('tooltip').style.display = 'block';
+    }
+
+    function hideTooltip() {
+        document.getElementById('tooltip').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
